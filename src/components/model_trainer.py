@@ -43,7 +43,7 @@ class ModelTrainer:
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
                 "XGBRegressor": XGBRegressor(),
-                # "CatBoosting Regressor": CatBoostRegressor(verbose=False),
+                # "CatBoosting Regressor": CatBoostRegressor(verbose=False), (#Error relating to catboost and numpy versions mismatch)
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
             params={
