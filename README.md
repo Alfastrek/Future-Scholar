@@ -35,7 +35,8 @@ This dataset contains information about student performance on exams, including:
 
 # Screenshot of UI
 
-![Screenshot (245)](https://github.com/user-attachments/assets/52078efb-f9c6-4778-b6ec-668d42283705)
+![Screenshot (246)](https://github.com/user-attachments/assets/0adc839e-7218-46fd-bb0f-99bd408bda3d)
+
 
 
 # Approach for the project 
