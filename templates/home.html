@@ -1,13 +1,13 @@
-<!-- home.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Exam Performance Indicator</title>
+    <title>Project - Data Science</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Slab:ital@1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='profile_images/aradhya_shukla.jpeg') }}">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -28,6 +28,7 @@
             color: #66fcf1;
             border-bottom: none;
             border-radius: 10px 10px 0 0;
+            padding: 20px 0; /* Increased padding for better spacing */
         }
 
         .card-body {
@@ -81,11 +82,65 @@
             width: 200px;
             border-bottom: 1px solid #fff;
         }
+
+        .profile-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info img {
+            border-radius: 50%;
+            width: 80px; /* Adjust size as needed */
+            height: 80px; /* Adjust size as needed */
+            margin-bottom: 10px;
+            border: 2px solid #66fcf1; /* Add a border to make it look like a ring */
+            padding: 5px; /* Space between the image and the border */
+            transition: transform 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .profile-info img:hover {
+            transform: scale(1.1); /* Slightly enlarge the image on hover */
+        }
+
+        .profile-info a {
+            color: #66fcf1; /* Match your theme color */
+            text-decoration: none;
+        }
+
+        .profile-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px; /* Adjust spacing */
+            padding-top: 10px; /* Padding for better separation from content */
+            border-top: 1px solid #ccc; /* Optional: Border line for separation */
+        }
+
+        .footer a {
+            color: #66fcf1; /* Match your theme color */
+            text-decoration: none;
+            margin: 0 10px; /* Adjust margin for spacing between links */
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="profile-info">
+            <a href="https://github.com/Alfastrek" target="_blank">
+                <img src="{{ url_for('static', filename='profile_images/aradhya_shukla.jpeg') }}" alt="Aradhya Shukla" class="profile-picture">
+            </a>
+            <h3>Aradhya Shukla</h3>
+            <a href="https://www.linkedin.com/in/aradhyashukla/" target="_blank">LinkedIn</a> |
+            <a href="mailto:aradhya1703@gmail.com">aradhya1703@gmail.com</a> |
+            <a href="https://github.com/Alfastrek/Future-Scholar" target="_blank">Source Code Here</a>
+        </div>
         <div class="card">
             <div class="card-header text-center">
                 <h1>Student Exam Performance Indicator</h1>
@@ -167,6 +222,11 @@
                 </form>
                 <div class="watermark">by Aradhya Shukla</div>
             </div>
+        </div>
+        <div class="footer">
+            <a href="https://www.linkedin.com/in/aradhyashukla/" target="_blank">LinkedIn</a> |
+            <a href="mailto:aradhya1703@gmail.com">aradhya1703@gmail.com</a> |
+            <a href="https://github.com/Alfastrek/Future-Scholar" target="_blank">Source Code Here</a>
         </div>
     </div>
 
