@@ -1,3 +1,4 @@
+<!-- home.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +51,8 @@
             color: #ffffff;
         }
 
-        .text-center h1, .text-center h2 {
+        .text-center h1,
+        .text-center h2 {
             font-weight: 700;
         }
 
@@ -89,6 +91,9 @@
                 <h1>Student Exam Performance Indicator</h1>
             </div>
             <div class="card-body">
+                <div class="translucent-box text-center mt-4">
+                    <h2><i>The Prediction is <span class="underline-placeholder">{{results}}</span></i></h2>
+                </div>
                 <form action="{{ url_for('predict_datapoint') }}" method="post">
                     <fieldset>
                         <legend class="text-center mb-4">Please Enter Required Details</legend>
@@ -160,9 +165,6 @@
                         </div>
                     </fieldset>
                 </form>
-                <div class="translucent-box text-center mt-4">
-                    <h2><i>The Prediction is <span class="underline-placeholder">{{results}}</span></i></h2>
-                </div>
                 <div class="watermark">by Aradhya Shukla</div>
             </div>
         </div>
