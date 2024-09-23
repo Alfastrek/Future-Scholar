@@ -61,7 +61,7 @@ This dataset contains information about student performance on exams, including:
 
 # AZURE Deployment Link :
 
-(https://scoreprediction.azurewebsites.net/)
+(https://scorepredictor.aradhya.site/)
 
 # Screenshot of UI
 ![Screenshot (247)](https://github.com/user-attachments/assets/b5d434cc-bb06-4585-9bd2-f522ca371c7d)
