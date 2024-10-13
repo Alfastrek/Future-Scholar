@@ -1,0 +1,235 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #141619;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1c1f23;
+  margin: 20px 0;
+}
+
+.card-header {
+  background-color: transparent;
+  color: #66fcf1;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card-body {
+  padding: 30px;
+  padding-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #141619;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: #1f2125;
+  border-color: #1f2125;
+  color: #ffffff;
+}
+
+.text-center h1,
+.text-center h2 {
+  font-weight: 700;
+}
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 2px solid #66fcf1;
+  padding: 5px;
+  transition: transform 0.3s;
+}
+
+.profile-info img:hover {
+  transform: scale(1.1);
+}
+
+.profile-info a {
+  color: #66fcf1;
+  text-decoration: none;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.footer a {
+  color: #66fcf1;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.description {
+  background-color: #1c1f23;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.description h2,
+.description h3 {
+  text-align: center;
+}
+
+.description p {
+  margin-bottom: 15px;
+}
+
+.underline-placeholder {
+  display: inline-block;
+  width: 200px;
+  border-bottom: 1px solid #fff;
+}
+
+.watermark {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  font-style: italic;
+  opacity: 0.7;
+}
+.col-md-6 {
+  padding: 0 40px; /* Add padding to the left and right of each column */
+}
+.form-group {
+  margin-top: 20px;
+}
+p.target-variable {
+  margin-top: 2em; /* Add a two-line gap */
+}
+.form-group.predict-button {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+h3.description-header {
+  margin: 30px;
+}
+.sidebar {
+  height: 100vh; /* Full-height sidebar */
+  position: fixed; /* Fixed position */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  padding: 1rem; /* Padding around the sidebar */
+  background-color: #040212; /* Sidebar background color */
+  border-right: 1px solid #040212;
+  z-index: 1040; /* Border for the sidebar */
+}
+
+.sidebar .profile-info {
+  margin-bottom: 20px; /* Spacing below profile info */
+}
+
+.sidebar .nav {
+  padding: 0; /* Remove default padding */
+}
+
+.sidebar .nav-item {
+  margin-bottom: 10px; /* Spacing between nav items */
+}
+
+.sidebar .nav-link {
+  font-size: 1.1rem; /* Increase font size */
+  color: white; /* Darker text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.sidebar .nav-link:hover {
+  background-color: #e9ecef; /* Light hover effect */
+  border-radius: 4px; /* Slightly round corners on hover */
+}
+
+.sidebar .nav-link.active {
+  background-color: #007bff; /* Active link background */
+  color: white; /* Active link text color */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; /* Add left padding to the navbar */
+  width: 100%;
+  z-index: 1030;
+  background-color: #040212; /* Ensure it stays above other elements */
+}
+
+.navbar h1 {
+  margin: 0;
+  color: white; /* Remove default margin from the heading */
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+h2,
+h3 {
+  font-style: italic; /* Italics for content headings */
+  margin-top: 20px; /* Spacing above headings */
+}
+th,
+td {
+  color: #fff; /* Makes table text white */
+  padding: 8px;
+  border: 1px solid #444;
+}
+.connect-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.connect-links a {
+  color: #007bff; /* Blue text for links */
+  text-decoration: none;
+  margin: 0 10px; /* Spacing between links */
+}
+.social-links a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Bootstrap primary color */
+  transition: color 0.2s; /* Smooth color transition */
+}
+
+.social-links a:hover {
+  color: #0056b3; /* Darker shade on hover */
+}

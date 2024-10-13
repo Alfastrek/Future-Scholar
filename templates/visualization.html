@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Score Predictor - Visualization</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Slab:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2224%22>🎓</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-black sidebar">
+          <div class="profile-info text-center mb-4">
+            <a href="https://github.com/Alfastrek" target="_blank">
+              <img
+                src="{{ url_for('static', filename='profile_images/aradhya_shukla.jpeg') }}"
+                alt="Aradhya Shukla"
+                class="img-fluid rounded-circle mb-2"
+                style="width: 100px; height: 100px"
+              />
+            </a>
+            <h5 class="font-weight-bold">Aradhya Shukla</h5>
+            <div class="social-links text-center">
+              <a
+                class="text-primary"
+                href="https://github.com/Alfastrek/Future-Scholar"
+                target="_blank"
+                >Source Code</a
+              >
+              <span class="mx-2">|</span>
+              <a
+                class="text-primary"
+                href="https://www.linkedin.com/in/aradhyashukla/"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+          <hr style="border-top: 1px solid white" />
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/predict">Predict Score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/visualization"
+                >Visualize Data</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dataset">Dataset</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4 main-top">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card mb-4">
+                <div class="card-header text-center">
+                  <h1 class="font-weight-bold">
+                    Student Performance Visualizations
+                  </h1>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h3 class="description-header">
+                        Average Math Scores by Gender
+                      </h3>
+                      <img
+                        src="data:image/png;base64,{{ plot_url1 }}"
+                        alt="Average Math Scores by Gender"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="description-header">
+                        Average Writing Scores by Race/Ethnicity
+                      </h3>
+                      <img
+                        src="data:image/png;base64,{{ plot_url2 }}"
+                        alt="Average Writing Scores by Race/Ethnicity"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <h3 class="description-header">
+                        Reading Score vs Writing Score
+                      </h3>
+                      <img
+                        src="data:image/png;base64,{{ plot_url3 }}"
+                        alt="Reading Score vs Writing Score"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="description-header">
+                        Distribution of Math Scores
+                      </h3>
+                      <img
+                        src="data:image/png;base64,{{ plot_url4 }}"
+                        alt="Distribution of Math Scores"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <h3 class="description-header">
+                        Boxplot of Math Scores by Gender
+                      </h3>
+                      <img
+                        src="data:image/png;base64,{{ plot_url5 }}"
+                        alt="Boxplot of Math Scores by Gender"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="description-header">
+                        Correlation Heatmap of Scores
+                      </h3>
+                      <img
+                        src="data:image/png;base64,{{ plot_url6 }}"
+                        alt="Correlation Heatmap"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

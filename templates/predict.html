@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Score Predictor - Aradhya Shukla 🧑🏻‍🎓🌟</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Slab:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2224%22>🎓</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-black sidebar">
+          <div class="profile-info text-center mb-4">
+            <a href="https://github.com/Alfastrek" target="_blank">
+              <img
+                src="{{ url_for('static', filename='profile_images/aradhya_shukla.jpeg') }}"
+                alt="Aradhya Shukla"
+                class="img-fluid rounded-circle mb-2"
+                style="width: 100px; height: 100px"
+              />
+            </a>
+            <h5 class="font-weight-bold">Aradhya Shukla</h5>
+            <div class="social-links text-center">
+              <a
+                class="text-primary"
+                href="https://github.com/Alfastrek/Future-Scholar"
+                target="_blank"
+                >Source Code</a
+              >
+              <span class="mx-2">|</span>
+              <a
+                class="text-primary"
+                href="https://www.linkedin.com/in/aradhyashukla/"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+          <hr style="border-top: 1px solid white" />
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/predict">Predict Score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/visualization">Visualize Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dataset">Dataset</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card mt-4">
+                <div class="card-body">
+                  <div class="text-center mt-4">
+                    <h2>
+                      <i
+                        >The Prediction (Maths Score):
+                        <span class="underline-placeholder">{{results}}</span>
+                      </i>
+                    </h2>
+                  </div>
+                  <hr />
+                  <form
+                    action="{{ url_for('predict_datapoint') }}"
+                    method="post"
+                  >
+                    <fieldset>
+                      <legend class="text-center mb-4">
+                        Please Enter Required Details
+                      </legend>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select
+                              class="form-control"
+                              id="gender"
+                              name="gender"
+                              required
+                            >
+                              <option selected disabled value="">
+                                Select your Gender
+                              </option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="ethnicity">Race or Ethnicity</label>
+                            <select
+                              class="form-control"
+                              id="ethnicity"
+                              name="ethnicity"
+                              required
+                            >
+                              <option selected disabled value="">
+                                Select Ethnicity
+                              </option>
+                              <option value="group A">Group A</option>
+                              <option value="group B">Group B</option>
+                              <option value="group C">Group C</option>
+                              <option value="group D">Group D</option>
+                              <option value="group E">Group E</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="parental_education"
+                              >Parental Level of Education</label
+                            >
+                            <select
+                              class="form-control"
+                              id="parental_education"
+                              name="parental_level_of_education"
+                              required
+                            >
+                              <option selected disabled value="">
+                                Select Parent Education
+                              </option>
+                              <option value="associate's degree">
+                                Associate's degree
+                              </option>
+                              <option value="bachelor's degree">
+                                Bachelor's degree
+                              </option>
+                              <option value="master's degree">
+                                Master's degree
+                              </option>
+                              <option value="some college">Some college</option>
+                              <option value="some high school">
+                                Some high school
+                              </option>
+                              <option value="high school">High school</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="writing_score"
+                              >Writing Score (out of 100)</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="writing_score"
+                              name="writing_score"
+                              placeholder="Enter your Writing score"
+                              min="0"
+                              max="100"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="lunch">Lunch</label>
+                            <select
+                              class="form-control"
+                              id="lunch"
+                              name="lunch"
+                              required
+                            >
+                              <option selected disabled value="">
+                                Select Type of Lunch
+                              </option>
+                              <option value="standard">Standard</option>
+                              <option value="free/reduced">Free/Reduced</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="test_preparation"
+                              >Test Preparation Course</label
+                            >
+                            <select
+                              class="form-control"
+                              id="test_preparation"
+                              name="test_preparation_course"
+                              required
+                            >
+                              <option selected disabled value="">
+                                Select Test Preparation
+                              </option>
+                              <option value="completed">Completed</option>
+                              <option value="none">None</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="reading_score"
+                              >Reading Score (out of 100)</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="reading_score"
+                              name="reading_score"
+                              placeholder="Enter your Reading score"
+                              min="0"
+                              max="100"
+                              required
+                            />
+                          </div>
+                          <div class="form-group predict-button text-center">
+                            <input
+                              type="submit"
+                              class="btn btn-primary"
+                              value="Predict your Maths Score"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

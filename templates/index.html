@@ -1,1 +1,208 @@
-<h1>Welcome to the Home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Score Predictor - Aradhya Shukla 🧑🏻‍🎓🌟</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Slab:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2224%22>🎓</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-black sidebar">
+          <div class="profile-info text-center mb-4">
+            <a href="https://github.com/Alfastrek" target="_blank">
+              <img
+                src="{{ url_for('static', filename='profile_images/aradhya_shukla.jpeg') }}"
+                alt="Aradhya Shukla"
+                class="img-fluid rounded-circle mb-2"
+                style="width: 100px; height: 100px"
+              />
+            </a>
+            <h5 class="font-weight-bold">Aradhya Shukla</h5>
+            <div class="social-links text-center">
+              <a
+                class="text-primary"
+                href="https://github.com/Alfastrek/Future-Scholar"
+                target="_blank"
+                >Source Code</a
+              >
+              <span class="mx-2">|</span>
+              <a
+                class="text-primary"
+                href="https://www.linkedin.com/in/aradhyashukla/"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+          <hr style="border-top: 1px solid white" />
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/predict">Predict Score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/visualization">Visualize Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dataset">Dataset</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4 main-top">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card mb-4">
+                <div class="card-header text-center">
+                  <h1 class="font-weight-bold">
+                    Student Performance Predictor
+                  </h1>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h2>Introduction About the Data</h2>
+                      <p>
+                        Welcome to the analysis of the
+                        <strong>Students Performance in Exams</strong> dataset!
+                        This dataset provides insights into various factors that
+                        might influence students' academic achievements. 📈
+                      </p>
+                      <p>
+                        <strong>Dataset:</strong>
+                        <a
+                          href="https://www.kaggle.com/code/aryanml007/students-performance-analysis/input"
+                          target="_blank"
+                          class="text-primary font-weight-bold"
+                          >Students Performance in Exams</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <h3 class="description-header">Description 📝</h3>
+                      <ul>
+                        <li>
+                          <strong>Gender:</strong> Gender of the student
+                          (male/female)
+                        </li>
+                        <li>
+                          <strong>Ethnicity:</strong> Ethnicity of the student
+                        </li>
+                        <li>
+                          <strong>Parental Level of Education:</strong> Highest
+                          education level of the student's parents
+                        </li>
+                        <li>
+                          <strong>Lunch:</strong> Type of lunch the student has
+                          (standard or free/reduced)
+                        </li>
+                        <li>
+                          <strong>Test Preparation Course:</strong> Whether the
+                          student completed a test preparation course (completed
+                          or none)
+                        </li>
+                        <li>
+                          <strong>Math Score:</strong> Score obtained in the
+                          math exam
+                        </li>
+                        <li>
+                          <strong>Reading Score:</strong> Score obtained in the
+                          reading exam
+                        </li>
+                        <li>
+                          <strong>Writing Score:</strong> Score obtained in the
+                          writing exam
+                        </li>
+                      </ul>
+                      <p>
+                        <strong>Size:</strong> Approximately 1000 students and 8
+                        distinct features.
+                      </p>
+                      <p>
+                        <strong>Target Variable:</strong> Math Score - Score
+                        obtained in the math exam.
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="description-header">Potential Insights 🌟</h3>
+                      <ul>
+                        <li>
+                          <strong>Gender Performance:</strong> Compare
+                          performance between male and female students.
+                        </li>
+                        <li>
+                          <strong>Ethnicity Impact:</strong> Assess how
+                          ethnicity affects academic results.
+                        </li>
+                        <li>
+                          <strong>Parental Education:</strong> Explore the
+                          influence of parents' education levels on student
+                          scores.
+                        </li>
+                        <li>
+                          <strong>Lunch Type:</strong> Determine if lunch
+                          standard impacts student performance.
+                        </li>
+                        <li>
+                          <strong>Test Preparation:</strong> Evaluate the effect
+                          of test prep courses on exam scores.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="/predict"
+                          class="btn btn-primary"
+                          style="
+                            margin-left: 130px;
+                            background-color: black;
+                            color: white;
+                          "
+                          >Start your Score Prediction here!</a
+                        >
+                      </p>
+                      <p>
+                        <a
+                          href="/visualization"
+                          class="btn btn-primary"
+                          style="margin-left: 175px"
+                          >Visualize overall Data</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
