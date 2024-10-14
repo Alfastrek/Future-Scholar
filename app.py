@@ -4,7 +4,7 @@ import pandas as pd
 import io
 import base64
 from flask import Flask, request, render_template, url_for
-
+from flask_caching import Cache
 plt.switch_backend('Agg')
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
@@ -12,6 +12,7 @@ from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 application=Flask(__name__)
 
 app=application
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 ## Route for a home page
 
@@ -46,6 +47,7 @@ def predict_datapoint():
         return render_template('predict.html',results=results[0])
     
 @app.route('/visualization')
+@cache.cached(timeout=0)
 def visualization():
     # Load the dataset
     df = pd.read_csv('notebook/data/stud.csv')
@@ -98,7 +100,7 @@ def visualization():
 
     # 5. Boxplot of Math Scores by Gender
     plt.figure(figsize=(8, 5))
-    sns.boxplot(x='gender', y='math_score', data=df, palette='Set2')
+    sns.boxplot(x='gender', y='math_score', data=df, hue='gender', palette='Set2', legend=False)
     plt.title('Boxplot of Math Scores by Gender')
     plt.tight_layout()
     img5 = io.BytesIO()
@@ -134,5 +136,5 @@ def dataset():
     return render_template('dataset.html', data=data)
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)        
+    app.run(host="0.0.0.0", port=5000, debug=False)        
 
